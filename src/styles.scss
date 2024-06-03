@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  //button common
+  --color-primary: #3d52a0;
+  --mdc-filled-button-container-color: var(--color-primary);
+  --mdc-filled-button-container-shape: 5px;
+}

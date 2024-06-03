@@ -1,0 +1,23 @@
+.wrapper {
+  --mdc-filled-text-field-container-color: transparent;
+  --mat-form-field-state-layer-color: transparent;
+  --mdc-filled-text-field-container-shape: 20px;
+  --mdc-shape-small: 20px;
+  width: 100%;
+
+  input::placeholder {
+    color: rgb(162, 159, 159);
+  }
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  border: 1px solid gray;
+  border-radius: 10px !important;
+  &:focus-within {
+    border: 1px solid var(--color-primary);
+  }
+}
+
+::ng-deep .mdc-line-ripple {
+  display: none;
+}
