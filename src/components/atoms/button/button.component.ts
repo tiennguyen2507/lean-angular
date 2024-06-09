@@ -12,9 +12,6 @@ export class ButtonComponent {
   @Input()
   color: 'primary' | 'warn' | 'accent' = 'primary';
 
-  @Input({ required: true })
-  title = '';
-
   @Input()
   type: 'button' | 'submit' = 'button';
 
@@ -22,6 +19,10 @@ export class ButtonComponent {
   onClick = new EventEmitter();
 
   click() {
-    this.onClick.emit();
+    this.onClick.emit('a');
+  }
+
+  testViewChild() {
+    console.log('testViewChild');
   }
 }

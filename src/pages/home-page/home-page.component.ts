@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
+import { TableComponent } from '../../components/atoms/table/table.component';
 
 export interface Todo {
   name: string;
@@ -17,11 +18,11 @@ const todoList: Todo[] = [
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, MatTableModule],
+  imports: [CommonModule, MatTableModule, TableComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight'];
+  columns: string[] = ['name', 'status', 'note'];
   dataSource = todoList;
 }

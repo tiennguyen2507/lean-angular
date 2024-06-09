@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="app-login">
+  <div class="wrapper">
+    <app-input label="email" placeholder="xxx@gmail.com" />
+    <app-input type="password" label="password" placeholder="****" />
+    <app-button (onClick)="login()" #buttonRef>
+      <div footer>hello word</div>
+      <div header>header</div>
+    </app-button>
+  </div>
+</div>
