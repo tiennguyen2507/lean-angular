@@ -1,10 +1,34 @@
 <div class="app-login">
   <div class="wrapper">
-    <app-input label="email" placeholder="xxx@gmail.com" />
-    <app-input type="password" label="password" placeholder="****" />
-    <app-button (onClick)="login()" #buttonRef>
-      <div footer>hello word</div>
-      <div header>header</div>
-    </app-button>
+    <ng-container *ngTemplateOutlet="inputEmail" />
+    <ng-container *ngTemplateOutlet="inputPassWord" />
+    <ng-container
+      *ngTemplateOutlet="
+        button;
+        context: {
+          nameButton: 'submit',
+          $implicit: 'implicit-value',
+          onClick: login
+        }
+      "
+    />
   </div>
 </div>
+
+<ng-template #loginEmpty>
+  <div>login empty</div>
+</ng-template>
+
+<ng-template #inputEmail>
+  <app-input label="email" placeholder="xxx@gmail.com" />
+</ng-template>
+
+<ng-template #inputPassWord>
+  <app-input type="password" label="password" placeholder="****" />
+</ng-template>
+
+<ng-template #button let-value let-name="nameButton" let-click="onClick">
+  <app-button (onClick)="click()" #buttonRef>
+    <div>{{ name }}</div>
+  </app-button>
+</ng-template>

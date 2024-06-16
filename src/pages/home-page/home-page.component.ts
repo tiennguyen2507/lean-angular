@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from '../../components/atoms/table/table.component';
+import { SidebarComponent } from '../../components/atoms/sidebar/sidebar.component';
 
 export interface Todo {
   name: string;
@@ -18,7 +19,7 @@ const todoList: Todo[] = [
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, MatTableModule, TableComponent],
+  imports: [CommonModule, MatTableModule, TableComponent, SidebarComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })

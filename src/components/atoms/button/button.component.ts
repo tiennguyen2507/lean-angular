@@ -15,14 +15,13 @@ export class ButtonComponent {
   @Input()
   type: 'button' | 'submit' = 'button';
 
+  @Input()
+  category: 'flat' | 'icon' = 'flat';
+
   @Output()
   onClick = new EventEmitter();
 
   click() {
-    this.onClick.emit('a');
-  }
-
-  testViewChild() {
-    console.log('testViewChild');
+    this.onClick.emit();
   }
 }

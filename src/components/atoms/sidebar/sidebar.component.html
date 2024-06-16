@@ -1,0 +1,10 @@
+<mat-drawer-container autosize class="sidebarWrapper">
+  <mat-drawer #drawer class="sidebar" mode="over" [opened]="true">
+    <div class="logo">logo</div>
+    <ul class="sideBarMenu">
+      <li class="sideBarMenuItem isActive">Trang chủ</li>
+      <li class="sideBarMenuItem">Sản phẩm của bạn</li>
+    </ul>
+  </mat-drawer>
+  <ng-content />
+</mat-drawer-container>

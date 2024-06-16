@@ -1,5 +1,7 @@
-<app-header />
-<main class="layout-main">
-  <router-outlet class=""></router-outlet>
-</main>
-<app-footer />
+<app-sidebar #sideBar>
+  <app-header (onClickMenu)="onClickMenu()" />
+  <main class="layout-main">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer />
+</app-sidebar>

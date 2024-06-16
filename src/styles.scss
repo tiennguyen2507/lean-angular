@@ -23,7 +23,11 @@ a {
 
 :root {
   //button common
-  --color-primary: #3d52a0;
+  --color-primary: #031c2f;
+
+  --color-primary-dark: var(--color-primary);
+  --text-primary-dark: #ffff;
+
   --mdc-filled-button-container-color: var(--color-primary);
   --mdc-filled-button-container-shape: 5px;
 }
