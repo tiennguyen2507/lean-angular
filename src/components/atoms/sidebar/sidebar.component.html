@@ -1,9 +1,16 @@
 <mat-drawer-container autosize class="sidebarWrapper">
-  <mat-drawer #drawer class="sidebar" mode="over" [opened]="true">
+  <mat-drawer #drawer class="sidebar" mode="over">
     <div class="logo">logo</div>
     <ul class="sideBarMenu">
-      <li class="sideBarMenuItem isActive">Trang chủ</li>
-      <li class="sideBarMenuItem">Sản phẩm của bạn</li>
+      <li *ngFor="let menuItem of sidebarMenu">
+        <a
+          [routerLink]="menuItem.path"
+          class="sideBarMenuItem"
+          [class.isActive]="menuItem.path === 'products'"
+          (click)="drawer.toggle()"
+          >{{ menuItem.name }}</a
+        >
+      </li>
     </ul>
   </mat-drawer>
   <ng-content />
