@@ -3,9 +3,9 @@
     <h1 class="product-title">Sản phẩm của bạn</h1>
     <app-button>+ Thêm sản phẩm</app-button>
   </div>
-  <div class="product-container">
-    <app-card>
-      <div card-header>Áo thun cách nhiệt</div>
+  <div class="product-container" *ngIf="!isLoading">
+    <app-card *ngFor="let product of products">
+      <div card-header>{{ product.title }}</div>
       <div card-content class="product-content">
         <div class="product-image">
           <img
@@ -21,9 +21,7 @@
         </div>
         <p class="product-label">description:</p>
         <p class="product-text">
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
+          {{ product.description }}
         </p>
         <ul class="size-container">
           <span class="product-label" class="product-label">size:</span>
@@ -33,108 +31,14 @@
         </ul>
         <div class="product-session">
           <span class="product-label" class="product-label">Giá: </span>
-          <span class="price">230.000vnd</span>
-        </div>
-      </div>
-    </app-card>
-    <app-card>
-      <div card-header>Áo thun cách nhiệt</div>
-      <div card-content class="product-content">
-        <div class="product-image">
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-        </div>
-        <p class="product-label">description:</p>
-        <p class="product-text">
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
-        <ul class="size-container">
-          <span class="product-label" class="product-label">size:</span>
-          <li class="size">S</li>
-          <li class="size">M</li>
-          <li class="size">L</li>
-        </ul>
-        <div class="product-session">
-          <span class="product-label" class="product-label">Giá: </span>
-          <span class="price">230.000vnd</span>
-        </div>
-      </div>
-    </app-card>
-    <app-card>
-      <div card-header>Áo thun cách nhiệt</div>
-      <div card-content class="product-content">
-        <div class="product-image">
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-        </div>
-        <p class="product-label">description:</p>
-        <p class="product-text">
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
-        <ul class="size-container">
-          <span class="product-label" class="product-label">size:</span>
-          <li class="size">S</li>
-          <li class="size">M</li>
-          <li class="size">L</li>
-        </ul>
-        <div class="product-session">
-          <span class="product-label" class="product-label">Giá: </span>
-          <span class="price">230.000vnd</span>
-        </div>
-      </div>
-    </app-card>
-    <app-card>
-      <div card-header>Áo thun cách nhiệt</div>
-      <div card-content class="product-content">
-        <div class="product-image">
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-          <img
-            src="https://media2.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/October2023/CM006.thumb1.3_35.jpg"
-            alt="HELLO"
-            class="image"
-          />
-        </div>
-        <p class="product-label">description:</p>
-        <p class="product-text">
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
-        <ul class="size-container">
-          <span class="product-label" class="product-label">size:</span>
-          <li class="size">S</li>
-          <li class="size">M</li>
-          <li class="size">L</li>
-        </ul>
-        <div class="product-session">
-          <span class="product-label" class="product-label">Giá: </span>
-          <span class="price">230.000vnd</span>
+          <span class="price"
+            >{{ product.price.toLocaleString() }}({{
+              product.sales.toLocaleString()
+            }})</span
+          >
         </div>
       </div>
     </app-card>
   </div>
 </div>
+<div *ngIf="isLoading">loadding</div>
