@@ -28,7 +28,7 @@
 </ng-template>
 
 <ng-template #button let-value let-name="nameButton" let-click="onClick">
-  <app-button (onClick)="click()" #buttonRef>
+  <app-button (onClick)="click()" #buttonRef [fullWidth]="true">
     <div>{{ name }}</div>
   </app-button>
 </ng-template>

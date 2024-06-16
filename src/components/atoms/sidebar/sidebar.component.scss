@@ -1,7 +1,5 @@
-.sidebarWrapper {
-  height: calc(100vh);
-}
 .sidebar {
+  width: 300px;
   border-radius: 0px;
   background-color: var(--color-primary);
 }
@@ -28,10 +26,10 @@
   color: var(--text-primary-dark);
 
   &:hover {
-    background-color: rgb(80, 90, 143);
+    background-color: rgb(50, 69, 163);
   }
 
   &.isActive {
-    background-color: rgb(80, 90, 143);
+    background-color: #3826ad;
   }
 }

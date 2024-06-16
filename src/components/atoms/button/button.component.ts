@@ -14,6 +14,9 @@ export class ButtonComponent {
   color: 'primary' | 'warn' | 'accent' = 'primary';
 
   @Input()
+  fullWidth: boolean = false;
+
+  @Input()
   type: 'button' | 'submit' = 'button';
 
   @Input()

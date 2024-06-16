@@ -2,7 +2,10 @@
   mat-flat-button
   [type]="type"
   [color]="color"
-  class="app-button"
+  [ngClass]="{
+    'app-button': true,
+    'full-width': !!fullWidth
+  }"
   (click)="click()"
 >
   <ng-content />

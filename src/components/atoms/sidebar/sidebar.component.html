@@ -1,13 +1,12 @@
 <mat-drawer-container autosize class="sidebarWrapper">
-  <mat-drawer #drawer class="sidebar" mode="over">
+  <mat-drawer #drawer class="sidebar" mode="side" [opened]="true">
     <div class="logo">logo</div>
     <ul class="sideBarMenu">
       <li *ngFor="let menuItem of sidebarMenu">
         <a
           [routerLink]="menuItem.path"
           class="sideBarMenuItem"
-          [class.isActive]="menuItem.path === 'products'"
-          (click)="drawer.toggle()"
+          [class.isActive]="menuItem.path === routePath"
           >{{ menuItem.name }}</a
         >
       </li>
